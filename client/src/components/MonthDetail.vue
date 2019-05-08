@@ -7,3 +7,19 @@
   
     </div>
 </template>
+
+<script>
+
+export default {
+    name: 'MonthDetail',
+    data(){
+        return {
+            month: {
+                name: ''
+            }
+        }
+    },
+    mounted(){
+        this.month.name = this.$route.params.month
+    }
+}

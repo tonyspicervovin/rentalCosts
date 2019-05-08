@@ -4,8 +4,8 @@
       <div class="d-flex flex-wrap justify-content-around">
         <div class="p-2" v-for="month in months" v-bind:key="month.name">
                 <Month
-                    v-bind:month="month"
-                ></Month>
+                    v-bind:month="month">
+                </Month>
             </div>
         </div>
   </div>

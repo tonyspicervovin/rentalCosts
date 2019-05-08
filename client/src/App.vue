@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Header></Header>
+    
     <rentalMonths></rentalMonths>
   </div>
 </template>
