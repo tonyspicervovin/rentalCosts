@@ -2,13 +2,14 @@
   <div id="app">
     <Header></Header>
     <RouterView></RouterView>
-    <NewRenterForm v-on:renter-added="newRenterAdded"></NewRenterForm>
+    
     <ShowRenters
     v-for="renter in renters" 
     v-bind:key="renter.name" 
     v-bind:renter="renter"
     v-on:delete-renter="renterDeleted">
     </ShowRenters>
+    <NewRenterForm v-on:renter-added="newRenterAdded"></NewRenterForm>
     
     
     
@@ -18,10 +19,10 @@
 </template>
 
 <script>
-import NewRenterForm from './components/NewRenterForm.vue'
 import ShowRenters from './components/ShowRenters.vue'
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
+import NewRenterForm from '@/components/NewRenterForm.vue'
 //importing components
 export default {
   name: 'app',
@@ -36,20 +37,9 @@ export default {
     }
   },
   components: {
-    Header, NewRenterForm, ShowRenters, Footer
+    Header,  ShowRenters, Footer, NewRenterForm
   },//components
-  methods: {
-    newRenterAdded(renter){
-            this.renters.push(renter)
-            console.log(renter)
-            //method to add a new renter
-        },
-    renterDeleted(renter) {
-      this.renters = this.renters.filter( function(s) { return s != renter })
-    },//method to delete a new renter
-    
   
-  }
 }
 </script>
 
