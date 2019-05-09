@@ -17,7 +17,7 @@
                 <button class="btn btn-primary" v-on:click="addBill">Add</button>
             <div id="table">
                 <tr>
-                    <th>Bill</th>
+                    <th>Bill</th> 
                     <th>Amount</th>
                 </tr>
             </div>
@@ -89,7 +89,7 @@ export default {
 </script>
 <style scoped>
 #table {
-    word-spacing: 20px;
+    text-align: center;
     color: green;
 }
 </style>

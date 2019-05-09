@@ -11,7 +11,7 @@
     </ShowRenters>
     
     
-    <rentalMonths></rentalMonths>
+    
     <Footer></Footer>
    </div>
    <!--Components in my app template       -->
@@ -20,7 +20,6 @@
 <script>
 import NewRenterForm from './components/NewRenterForm.vue'
 import ShowRenters from './components/ShowRenters.vue'
-import rentalMonths from './components/rentalMonths.vue'
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
 //importing components
@@ -37,7 +36,7 @@ export default {
     }
   },
   components: {
-    Header, NewRenterForm, ShowRenters, rentalMonths, Footer
+    Header, NewRenterForm, ShowRenters, Footer
   },//components
   methods: {
     newRenterAdded(renter){
