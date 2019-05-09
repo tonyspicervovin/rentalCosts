@@ -39,7 +39,18 @@ export default {
   components: {
     Header,  ShowRenters, Footer, NewRenterForm
   },//components
+  methods: {
+    newRenterAdded(renter){
+            this.renters.push(renter)
+            console.log(renter)
+            //method to add a new renter
+        },
+    renterDeleted(renter) {
+      this.renters = this.renters.filter( function(s) { return s != renter })
+    },//method to delete a new renter
+    
   
+  }
 }
 </script>
 
