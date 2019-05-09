@@ -10,7 +10,7 @@
         </div>
   </div>
 </template>
-
+<!--Displaying each month  -->
 <script>
 import Month from '@/components/Month'
 export default {

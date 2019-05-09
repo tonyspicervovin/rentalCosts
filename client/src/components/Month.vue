@@ -1,24 +1,18 @@
 <template>
-
-
-<div class = "state-summary p2 rounded">
-    
-        <b-button id = "button" variant="outline-primary">{{ month.name }}</b-button>
+    <div class = "state-summary p2 rounded">
+    <b-button id = "button" variant="outline-primary">{{ month.name }}</b-button>
         <p>
             <router-link v-bind:to="{ name: 'detail', params: {month: monthName }  }">
                 <img class ="map-icon" src="@/assets/money-bag.png">
             </router-link>
         </p>
-
     </div>
-
-    
 </template>
-
+<!-- displaying each name and a money symbol that will route the app to the page for that month -->
 <script>
-
 export default {
     name: 'Month',
+    
     props: {
         month: Object
     },
@@ -26,9 +20,11 @@ export default {
         return {
             monthName: this.month.name,
             
+            
 
         }
-    }
+    },
+  
 }
 
 

@@ -1,6 +1,6 @@
 import Router from 'vue-router'
 
-import rentalMonths from '@/components/rentalMonths'
+import Footer from '@/components/Footer'
 
 import MonthDetail from '@/components/MonthDetail'
 
@@ -10,7 +10,7 @@ export default new Router({
         
         {
             path: '/',
-            component: rentalMonths
+            component: Footer
         },
         {
             path: '/detail/:month',

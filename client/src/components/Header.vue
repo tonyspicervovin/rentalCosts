@@ -6,7 +6,7 @@
     </div>
     </div>
 </template>
-
+<!-- displaying my banner -->
 
 <script>
 export default {
