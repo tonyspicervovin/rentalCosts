@@ -2,6 +2,7 @@
 
 
 <div class = "state-summary p2 rounded">
+    
         <b-button id = "button" variant="outline-primary">{{ month.name }}</b-button>
         <p>
             <router-link v-bind:to="{ name: 'detail', params: {month: monthName }  }">

@@ -1,18 +1,18 @@
 <template>
   <div id="app">
     <Header></Header>
-    
-    <rentalMonths></rentalMonths>
+    <RouterView></RouterView>
+   
   </div>
 </template>
 
 <script>
-import rentalMonths from './components/rentalMonths.vue'
-import Header from '@/components/Header.vue'
+//import rentalMonths from './components/rentalMonths.vue'
+//import Header from '@/components/Header.vue'
 export default {
   name: 'app',
   components: {
-    rentalMonths, Header
+    
   }
 }
 </script>

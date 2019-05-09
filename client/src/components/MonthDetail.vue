@@ -1,10 +1,12 @@
 <template>
     <div class="month-detail p-2">
-
-        <h2>The Month of {{month.name}}</h2>
-
         
-  
+        <h2>The Month of </h2>
+
+        <span class="p-3">
+                <router-link to="/">Home</router-link>
+        </span>
+
     </div>
 </template>
 
@@ -21,5 +23,6 @@ export default {
     },
     mounted(){
         this.month.name = this.$route.params.month
+        
     }
 }
