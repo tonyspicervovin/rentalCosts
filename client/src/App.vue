@@ -42,6 +42,8 @@ export default {
   },
   methods: {
     newRenterAdded(renter){
+            console.log('adding user')
+            console.log('user is '+renter.name)
             this.$billAPIService.addRenter(renter).then( renter => {
               this.updateRenters()
             })
