@@ -28,9 +28,7 @@ export default {
   name: 'app',
   data() {
     return {
-      renters: [
-        { name: 'example', email: 'TonSpice@gmail.com'},
-      ],//array of renter objects
+      renters: [],//array of renter objects
       
       name: '',
       email:''
@@ -39,18 +37,28 @@ export default {
   components: {
     Header,  ShowRenters, Footer, NewRenterForm
   },//components
+  mounted(){
+    this.updateRenters()
+  },
   methods: {
     newRenterAdded(renter){
-            this.renters.push(renter)
-            console.log(renter)
+            this.$billAPIService.addRenter(renter).then( renter => {
+              this.updateRenters()
+            })
             //method to add a new renter
         },
     renterDeleted(renter) {
-      this.renters = this.renters.filter( function(s) { return s != renter })
+      
     },//method to delete a new renter
+    updateRenters(){
+      this.$billAPIService.getAllRenters().then( renters => {
+        this.renters = renters
+      })
+    }
     
   
   }
+  
 }
 </script>
 
