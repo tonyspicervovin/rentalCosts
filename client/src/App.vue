@@ -30,8 +30,8 @@ export default {
     return {
       renters: [],//array of renter objects
       
-      name: '',
-      email:''
+      RenterName: '',
+      RenterEmail:''
     }
   },
   components: {

@@ -1,8 +1,10 @@
 var express = require('express')
 var app = express()
+var bodyParser = require('body-parser')
+
 var api_routes = require('./routes/api.js')
 
-
+app.use(bodyParser.json())
 
 app.use('/api', api_routes)
 app.use(function(req, res, next){

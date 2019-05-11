@@ -1,5 +1,5 @@
 import axios from 'axios'
-const base_url ='/api/users'
+const users_url ='/api/users'
 export default {
     getAllRenters(){
         return axios.get('/api/users').then(response => {
@@ -7,7 +7,7 @@ export default {
         })
     },
     addRenter(renter){
-        return axios.post(base_url, renter).then(response => {
+        return axios.post(users_url, renter).then(response => {
             return response.data
         })
 
