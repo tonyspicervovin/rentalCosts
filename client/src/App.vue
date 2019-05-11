@@ -23,6 +23,7 @@ import ShowRenters from './components/ShowRenters.vue'
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
 import NewRenterForm from '@/components/NewRenterForm.vue'
+import { constants } from 'fs';
 //importing components
 export default {
   name: 'app',
@@ -30,20 +31,22 @@ export default {
     return {
       renters: [],//array of renter objects
       
-      RenterName: '',
-      RenterEmail:''
+      renterName: '',
+      renterEmail:''
     }
   },
   components: {
     Header,  ShowRenters, Footer, NewRenterForm
   },//components
-  mounted(){
-    this.updateRenters()
+  
+    mounted(){
+        this.getAllRenters()
+    
   },
   methods: {
     newRenterAdded(renter){
             console.log('adding user')
-            console.log('user is '+renter.name)
+            console.log('user is '+renter.renterName)
             this.$billAPIService.addRenter(renter).then( renter => {
               this.updateRenters()
             })
@@ -52,11 +55,12 @@ export default {
     renterDeleted(renter) {
       
     },//method to delete a new renter
-    updateRenters(){
-      this.$billAPIService.getAllRenters().then( renters => {
-        this.renters = renters
-      })
-    }
+   getAllRenters(){
+            this.$billAPIService.getAllRenters().then(data => {
+                this.renters = data
+                console.log(data)
+            })
+        }
     
   
   }

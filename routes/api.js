@@ -1,10 +1,10 @@
 var express = require('express')
 var Users = require('../models').Users
+var router = express.Router()
 
-    var router = express.Router()
     router.get('/users', function(req, res, next){
-        Users.findAll().then( renter => {
-            return res.json(renter)
+        Users.getAllRenters().then( users => {
+            return res.json(users)
         }).catch(err => next(err))
     })
     router.post('/users', function(req, res, next){

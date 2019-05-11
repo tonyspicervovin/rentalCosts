@@ -18,7 +18,9 @@ export default {
         bill: Object,
         
     },
+    
     methods: {
+        
         deleteBill(bill) {
            if (confirm(`Delete ${bill.name}?`)){
                this.$emit('delete-bill', bill)

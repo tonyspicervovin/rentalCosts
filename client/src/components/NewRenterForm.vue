@@ -42,7 +42,7 @@ export default {
             console.log('added')
             this.errors=[]
             if (this.newRenterName && this.newEmail){
-                let renter= { RenterName: this.newRenterName, RenterEmail: this.newEmail}
+                let renter= { renterName: this.newRenterName, renterEmail: this.newEmail}
                 this.$emit('renter-added', renter)
                 this.newRenterName = ''
                 this.newEmail = ''
