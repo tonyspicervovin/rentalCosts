@@ -33,19 +33,31 @@
 
         
         <!--Input to add new renter , name and email  -->
-        <h3>
         
+        
+        <div class="card bill-list m-2 p-2">
+                <h4 class="card-title">Bills</h4>
+                <div id="bill-table">
+                    <table class="table">
+                        <tr>
+                            <th>Name</th>
+                            <th>Amount Owed</th>
+                            <th>Amount Paid</th>
+                            
+                        </tr>
         <ShowBills
             v-for="bill in bills" v-bind:key="bill.id" 
             v-bind:bill="bill"
             v-on:delete-bill="billDeleted">
         </ShowBills>
-        <BillTable>
-            
-        </BillTable>
-        </h3>
+                    </table>
+                </div>
+            </div>
+
+    </div>
+        
     
- </div>
+
     
     
 </template>
@@ -71,9 +83,7 @@ export default {
             month:{
                 name: ''},
             
-            bills:[
-        {name: 'groceries', amount: '500', month: 'January'}
-                ],
+            bills:[],
             
     // array of bills
                 }
@@ -86,7 +96,9 @@ export default {
     //loading bills initially
     //getting current month
     methods: {
-       
+       addPayment(){
+
+       },
         addBill(){
 
             if (this.newBill && this.newAmount){

@@ -1,5 +1,6 @@
 <template>
     <tr orderBy name>    
+    
     <td>{{ bill.name }}</td>
     <td>{{ bill.amount }}</td>
     <td>{{ bill.month }}
@@ -21,7 +22,7 @@ export default {
     },
     
     methods: {
-        
+       
         deleteBill(bill) {
            if (confirm(`Delete ${bill.name}?`)){
                this.$emit('delete-bill', bill)
