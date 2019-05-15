@@ -1,5 +1,6 @@
 import axios from 'axios'
 const users_url ='/api/users'
+const bills_url='/api/bills'
 export default {
     getAllRenters(){
         return axios.get('/api/users').then(response => {
@@ -11,5 +12,20 @@ export default {
             return response.data
         })
 
+    },
+    deleteRenter(renterName){
+        return axios.delete('/api/users/'+renterName).then(response => {
+            return response.data
+        })
+    },
+    addBill(bill){
+        return axios.post(bills_url, bill).then(response => {
+            return response.data
+        })
+    },
+    getAllBills(){
+        return axios.get('/api/bills').then(response => {
+            return response.data
+        })
     }
 }

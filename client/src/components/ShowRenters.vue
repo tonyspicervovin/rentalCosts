@@ -1,7 +1,7 @@
 <template>
     <tr orderBy name>    
-    <td>{{ renter.name }}</td>
-    <td>{{ renter.email }}</td>
+    <td>{{ renter.renterName }}</td>
+    <td>{{ renter.renterEmail }}</td>
     <td>
         <img class="delete-icon" v-on:click="deleteRenter(renter)" src = "@/assets/delete.png">
     </td>
@@ -35,8 +35,8 @@ export default {
 
 <style scoped>
 tr {
-    text-align: right;
-    color: blue;
+    text-align: left;
+    
 }
 img {
     height: 50px;

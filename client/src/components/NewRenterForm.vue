@@ -37,6 +37,7 @@ export default {
             errors:[]
         }
     },
+    
     methods:{
         addRenter(){
             console.log('added')

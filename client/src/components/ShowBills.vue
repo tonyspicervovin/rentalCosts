@@ -2,6 +2,7 @@
     <tr orderBy name>    
     <td>{{ bill.name }}</td>
     <td>{{ bill.amount }}</td>
+    <td>{{ bill.month }}
     <td>
         <img class="delete-icon" v-on:click="deleteBill(bill)" src = "@/assets/delete.png">
     </td>

@@ -3,15 +3,15 @@
     <Header></Header>
     <RouterView></RouterView>
     
-    <ShowRenters
+   
+    <NewRenterForm v-on:renter-added="newRenterAdded"></NewRenterForm>
+    
+     <ShowRenters
     v-for="renter in renters" 
     v-bind:key="renter.name" 
     v-bind:renter="renter"
     v-on:delete-renter="renterDeleted">
     </ShowRenters>
-    <NewRenterForm v-on:renter-added="newRenterAdded"></NewRenterForm>
-    
-    
     
     <Footer></Footer>
    </div>
@@ -48,12 +48,14 @@ export default {
             console.log('adding user')
             console.log('user is '+renter.renterName)
             this.$billAPIService.addRenter(renter).then( renter => {
-              this.updateRenters()
+              this.getAllRenters
             })
             //method to add a new renter
         },
     renterDeleted(renter) {
-      
+      this.$billAPIService.deleteRenter(renter.renterName).then( () => {
+        this.getAllRenters
+      })
     },//method to delete a new renter
    getAllRenters(){
             this.$billAPIService.getAllRenters().then(data => {

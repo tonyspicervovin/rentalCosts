@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    
+    <h1>{{ msg }}</h1>
       <div class="d-flex flex-wrap justify-content-around">
         <div class="p-2" v-for="month in months" v-bind:key="month.name">
                 <Month
@@ -14,11 +14,10 @@
 <!--Displaying each month  -->
 <script>
 import Month from '@/components/Month'
-
 export default {
   name: 'rentalMonths',
   components: {
-    Month,
+    Month
   },
   data(){
     return {
@@ -38,14 +37,17 @@ export default {
       ]
     }
   },
-  
-  
+  props: {
+    msg: String
+  }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#b-button {
 
+}
 h3 {
   margin: 40px 0 0;
 }
