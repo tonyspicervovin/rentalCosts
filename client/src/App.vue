@@ -8,7 +8,7 @@
     
      <ShowRenters
     v-for="renter in renters" 
-    v-bind:key="renter.renterName" 
+    v-bind:key="renter.id" 
     v-bind:renter="renter"
     v-on:delete-renter="renterDeleted">
     </ShowRenters>
