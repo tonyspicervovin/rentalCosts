@@ -47,7 +47,8 @@ var router = express.Router()
                 let billTotal = req.body.amount 
                 let individualPortion = billTotal / numberRenters
                 console.log(bill.month)
-                let createBillPortions = Users.map( user =>  UserPortions.create( { renterId : renter.id, amount: individualPortion, month: bill.month, billId: bill.id, billName: bill.name } ) )
+                
+                let createBillPortions = users.map( user =>  UserPortions.create( { renterId:user.id,amount:individualPortion,month: bill.month,billId:bill.id,billName:bill.name } ) )
                 Promise.all(createBillPortions).then( () => {
                    res.status(201).send()
                 })
