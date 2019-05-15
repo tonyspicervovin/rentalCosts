@@ -23,9 +23,15 @@ export default {
             return response.data
         })
     },
+    deleteBill(id){
+        return axios.delete('/api/bills/'+id).then(response => {
+            return response.data
+        })
+    },
     getAllBills(){
         return axios.get('/api/bills').then(response => {
             return response.data
         })
     }
 }
+//making requests to routes on the server side

@@ -30,9 +30,30 @@ var router = express.Router()
             return res.json(bills)
         }).catch(err => next(err))
     })
+    router.delete('/bills/:id', function(req, res, next){
+        Bills.destroy({where: {id: req.params.id}}).then( rowsModified => {
+            return res.send('ok')
+        }).catch ( err => next(err))
+    })
+    //deleting bills that match id passed
     router.post('/bills', function(req, res, next){
-        Bills.create(req.body).then( (data) => {
-            return res.status(201).send('ok')
+        Bills.create(req.body).then( (bill) => {
+
+            // Get all of the Renters 
+               // Users.findAll().then(users => {
+                // figure out bill portion, save bill portions to database. TODO error handling, check attribute names 
+                //let numberRenters = users.length 
+                //let billTotal = req.body.amount 
+                //let individualPortion = billTotal / numberRenters
+                
+                //let createBillPortions = users.map( renter =>  Renters.create( { renterId : renter.id, amount: individualPortion, billId: bill.id, paid: false, billName: bill.name} ) )
+
+               // Promise.all(createBillPortions).then( () => {
+                   // res.status(201).send()
+               // })
+           // })
+
         }).catch(err => next(err))
     })
+
     module.exports=router

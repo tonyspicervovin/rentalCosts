@@ -12,7 +12,7 @@ module.exports = {
         type: Sequelize.FLOAT
       },
       paid: {
-        type: Sequelize.FLOAT
+        type: Sequelize.BOOLEAN
       },
       billID: {
         type: Sequelize.INTEGER

@@ -4,15 +4,12 @@
             <span class="p-3">
                 <router-link to="/">Home</router-link>
             </span>
-            
-    </div>
-
-    
-
+            <!-- link to home page -->
+        </div>
     </div>
 </template>
 <script>
-export default{
+export default {
     name: 'Footer'
 }
 </script>

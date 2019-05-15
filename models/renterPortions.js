@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     billID: DataTypes.INTEGER,
     renterID: DataTypes.INTEGER,
     amount: DataTypes.FLOAT,
-    paid: DataTypes.FLOAT,
+    paid: DataTypes.BOOLEAN,
     billName: DataTypes.STRING
   }, {});
   renterPortions.associate = function(models) {

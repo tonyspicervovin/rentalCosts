@@ -5,13 +5,24 @@
     
    
     <NewRenterForm v-on:renter-added="newRenterAdded"></NewRenterForm>
-    
-     <ShowRenters
+    <div class="card bill-list m-2 p-2">
+                <h4 class="card-title">Renters</h4>
+                <div id="bill-table">
+                    <table class="table">
+                        <tr>
+                        <th>Renter Name</th>
+                        <th>Renter Email</th>
+                        </tr>
+        <ShowRenters
     v-for="renter in renters" 
     v-bind:key="renter.id" 
     v-bind:renter="renter"
     v-on:delete-renter="renterDeleted">
     </ShowRenters>
+                    </table>
+                </div>
+        </div>
+     
     
     <Footer></Footer>
    </div>

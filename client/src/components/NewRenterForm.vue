@@ -19,11 +19,7 @@
                 <br><br><br>
         </form>
         <!--Input to add new renter , name and email  -->
-        <h3>
-        Current Renters
-        </h3>
-    </div>
-        
+    </div>  
 </div>
 </template>
 

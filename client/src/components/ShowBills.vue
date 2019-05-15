@@ -1,14 +1,11 @@
 <template>
     <tr orderBy name>    
-    
+    <td>{{ 'harold' }}</td>
     <td>{{ bill.name }}</td>
     <td>{{ bill.amount }}</td>
-    <td>{{ bill.month }}
     <td>
-        <img class="delete-icon" v-on:click="deleteBill(bill)" src = "@/assets/delete.png">
+        <img class="delete-icon" v-on:click="deleteBill(bill)" src = "@/assets/money-bag.png">
     </td>
-    
-    
   </tr>
 </template>
 
@@ -18,20 +15,15 @@ export default {
    
     props: {
         bill: Object,
-        
-    },
-    
+        },
     methods: {
        
         deleteBill(bill) {
-           if (confirm(`Delete ${bill.name}?`)){
+           if (confirm(`Do you want to make ${bill.name} as paid?`)){
                this.$emit('delete-bill', bill)
            }
-            
         }
     }
-    
-    
 }
 
 </script>

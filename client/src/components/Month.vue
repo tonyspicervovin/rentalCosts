@@ -1,9 +1,8 @@
 <template>
     <div class = "state-summary p2 rounded">
-    <b-button id = "button" variant="outline-primary">{{ month.name }}</b-button>
         <p>
             <router-link v-bind:to="{ name: 'detail', params: {month: monthName }  }">
-                <img class ="map-icon" src="@/assets/money-bag.png">
+                <b-button id = "button" variant="outline-primary">{{ month.name }}</b-button>
             </router-link>
         </p>
     </div>
@@ -12,20 +11,15 @@
 <script>
 export default {
     name: 'Month',
-    
     props: {
         month: Object
     },
     data(){
         return {
             monthName: this.month.name,
-            
-            
-
         }
     },
-  
-}
+  }
 
 
 </script>
