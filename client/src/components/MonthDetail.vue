@@ -36,7 +36,7 @@
         <h3>
         
         <ShowBills
-            v-for="bill in bills" v-bind:key="bill.name" 
+            v-for="bill in bills" v-bind:key="bill.id" 
             v-bind:bill="bill"
             v-on:delete-bill="billDeleted">
         </ShowBills>
@@ -70,6 +70,7 @@ export default {
             bill: '',
             month:{
                 name: ''},
+            
             bills:[
         {name: 'groceries', amount: '500', month: 'January'}
                 ],
@@ -80,7 +81,7 @@ export default {
     mounted(){
         this.getBills()
         this.month.name = this.$route.params.month
-        this.getRenters()
+        
     },
     //loading bills initially
     //getting current month
@@ -91,10 +92,11 @@ export default {
             if (this.newBill && this.newAmount){
                 let bill= { name: this.newBill, amount: this.newAmount, month: this.month.name}
                 this.$billAPIService.addBill(bill).then( bill => {
-                    this.getBills
+                    this.newBill = ''
+                    this.newAmount = ''
+                    this.getBills()
                 })
-                this.newRenterName = ''
-                this.newEmail = ''
+                
                 
             }else{
                 this.errors.push('Name and email are required')
@@ -105,7 +107,7 @@ export default {
             console.log('happening')
             this.$billAPIService.getAllBills().then(data => {
                 this.bills = data
-                console.log(data)
+                console.log(this.bills)
             })
         },
         billDeleted(bill) {

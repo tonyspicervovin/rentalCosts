@@ -8,7 +8,7 @@
     
      <ShowRenters
     v-for="renter in renters" 
-    v-bind:key="renter.name" 
+    v-bind:key="renter.renterName" 
     v-bind:renter="renter"
     v-on:delete-renter="renterDeleted">
     </ShowRenters>
@@ -48,13 +48,13 @@ export default {
             console.log('adding user')
             console.log('user is '+renter.renterName)
             this.$billAPIService.addRenter(renter).then( renter => {
-              this.getAllRenters
+              this.getAllRenters()
             })
             //method to add a new renter
         },
     renterDeleted(renter) {
       this.$billAPIService.deleteRenter(renter.renterName).then( () => {
-        this.getAllRenters
+        this.getAllRenters()
       })
     },//method to delete a new renter
    getAllRenters(){
