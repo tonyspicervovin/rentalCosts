@@ -4,8 +4,8 @@ module.exports = (sequelize, DataTypes) => {
     billID: DataTypes.INTEGER,
     renterID: DataTypes.INTEGER,
     amount: DataTypes.FLOAT,
-    paid: DataTypes.BOOLEAN,
-    billName: DataTypes.STRING
+    billName: DataTypes.STRING,
+    month: DataTypes.STRING
   }, {});
   renterPortions.associate = function(models) {
     // associations can be defined here

@@ -8,11 +8,11 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      month: {
+        type: Sequelize.STRING
+      },
       amount: {
         type: Sequelize.FLOAT
-      },
-      paid: {
-        type: Sequelize.BOOLEAN
       },
       billID: {
         type: Sequelize.INTEGER

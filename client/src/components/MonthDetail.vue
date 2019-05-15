@@ -8,6 +8,7 @@
                             <th>Renter Name</th>
                             <th>Bill Name</th>
                             <th>Amount Owed</th>
+                            <th>Mark as paid</th>
                         </tr>
                         <ShowBills
                         v-for="bill in bills" v-bind:key="bill.id" 
