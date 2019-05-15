@@ -14,6 +14,14 @@ module.exports = {
       paid: {
         type: Sequelize.FLOAT
       },
+      billID: {
+        type: Sequelize.INTEGER
+      },
+      renterID: {
+        type: Sequelize.INTEGER,
+        foreignKey: true,
+      },
+      
       billName: {
         allowNull: false,
         type: Sequelize.STRING

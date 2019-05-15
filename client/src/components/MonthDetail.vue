@@ -16,19 +16,7 @@
             </div>
                 <button class="btn btn-primary" v-on:click="addBill">Add</button>
         </div>
-        <div class="card pay-bill m-2 p-2">
         
-            <h4 class="card-title">Pay a bill</h4>
-            <div class="form-group">
-                <label for="type">What Bill</label>
-                <input id="type" class="form-control" v-model.trim="whichBill">
-            </div>
-            <div class="form-group">
-                <label for="amount">Payment Amount</label>
-                <input id="amount" class="form-control" v-model.trim="howMuch">
-            </div>
-                <button class="btn btn-primary" v-on:click="addPayment">Pay</button>
-        </div>
             
 
         
@@ -74,9 +62,7 @@ export default {
     },
     data(){
         return {
-            numberRenters: '',
-            whichBill: '',
-            howMuch: '',
+            
             newBill: '',
             newAmount: '',
             bill: '',
@@ -120,7 +106,7 @@ export default {
             this.$billAPIService.getAllBills().then(data => {
                 this.bills = data
                 console.log(this.bills)
-            })
+            })  
         },
         billDeleted(bill) {
         this.bills = this.bills.filter( function(s) { return s != bill })
