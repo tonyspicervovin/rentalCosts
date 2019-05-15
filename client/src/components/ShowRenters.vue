@@ -21,7 +21,7 @@ export default {
     },
     methods: {
         deleteRenter(renter) {
-           if (confirm(`Delete ${renter.name}?`)){
+           if (confirm(`Delete ${renter.renterName}?`)){
                this.$emit('delete-renter', renter)
            }
             
