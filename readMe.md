@@ -1,4 +1,4 @@
-Rental Costs Management App
+# Rental Costs Management App
 This is a vue app with an express server using API calls.
 There are three tables in the database. Users, Bills and RenterPortions.
 Users are stored with attributes name and email, bills have name, amount and month.
