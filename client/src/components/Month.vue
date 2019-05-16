@@ -20,10 +20,7 @@ export default {
         }
     },
   }
-
-
 </script>
-
 <style>
 #button{
     height: 100px;

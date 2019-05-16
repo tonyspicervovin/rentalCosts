@@ -75,31 +75,20 @@ export default {
                 this.errors.push('Name and email are required')
                 }
             },
+            //method that adds a bill, clears the fields and gets current bills
         getBills(){
-            
-            console.log('happening')
             this.$billAPIService.getAllBills(this.month.name).then(data => {
                 this.bills = data
-                console.log('happened')
-
             })  
         },
+        //method for getting bills based on the current month
         billPaid(bill) {
-        
         this.$billAPIService.billPaid(bill).then( () => {
         this.getBills()
+        //method for to update bill attribute to paid, than updates and get current bills
          })
-        console.log('deleting')
-        }
-},
-    //computed(){
-        //activeBills: function() {
-            //return this.bills.filter(function(u){
-               // return 
-           // })
-        //}
-   // }
-// methods to add and delete bill   
+            }
+        },  
 }
 </script>
 <style scoped>

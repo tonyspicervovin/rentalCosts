@@ -36,7 +36,6 @@ export default {
     
     methods:{
         addRenter(){
-            console.log('added')
             this.errors=[]
             if (this.newRenterName && this.newEmail){
                 let renter= { renterName: this.newRenterName, renterEmail: this.newEmail}

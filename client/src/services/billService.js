@@ -34,4 +34,4 @@ export default {
         })
     }
 }
-//making requests to routes on the server side
+//here axios makes requests from vue client to express api server for each instance I need to update the batabase

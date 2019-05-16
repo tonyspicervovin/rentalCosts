@@ -41,6 +41,7 @@ var router = express.Router()
        }).then( (rowsModified) => {
            if (!rowsModified[0]) {
                return res.status(404).send('Not found')
+               //returning not found if no rows updated
            }else {
                return res.send('Ok')
            }
@@ -65,10 +66,9 @@ var router = express.Router()
                     renterPortions.create( { renterName:user.renterName,renterID: user.id,amount:individualPortion,month: bill.month,billID:bill.id,billName:bill.name,paid:false } ) )
                 Promise.all(createBillPortions).then( () => {
                    res.status(201).send()
-                   
                 })
             })
-
+            //adding to renterPortions database for each user, their portion of the added bill
         }).catch(err => next(err))
     })
 

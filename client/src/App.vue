@@ -6,25 +6,23 @@
    
     <NewRenterForm v-on:renter-added="newRenterAdded"></NewRenterForm>
     <div class="card bill-list m-2 p-2">
-                <h4 class="card-title">Renters</h4>
-                <div id="bill-table">
-                    <table class="table">
-                        <tr>
-                        <th>Renter Name</th>
-                        <th>Renter Email</th>
-                        </tr>
-        <ShowRenters
-    v-for="renter in renters" 
-    v-bind:key="renter.id" 
-    v-bind:renter="renter"
-    v-on:delete-renter="renterDeleted">
-    </ShowRenters>
+    <h4 class="card-title">Renters</h4>
+      <div id="bill-table">
+        <table class="table">
+          <tr>
+          <th>Renter Name</th>
+          <th>Renter Email</th>
+          </tr>
+          <ShowRenters
+            v-for="renter in renters" 
+            v-bind:key="renter.id" 
+            v-bind:renter="renter"
+            v-on:delete-renter="renterDeleted">
+          </ShowRenters>
     <!-- displaying renters -->
-                    </table>
-                </div>
-        </div>
-     
-    
+        </table>
+      </div>
+    </div>
     <Footer></Footer>
    </div>
    <!--Components in my app template       -->
@@ -53,17 +51,15 @@ export default {
   
     mounted(){
         this.getAllRenters()
-    
-  },
+        //getting renters initially
+    },
   methods: {
     newRenterAdded(renter){
-            console.log('adding user')
-            console.log('user is '+renter.renterName)
             this.$billAPIService.addRenter(renter).then( renter => {
               this.getAllRenters()
             })
             //method to add a new renter
-        },
+          },
     renterDeleted(renter) {
       this.$billAPIService.deleteRenter(renter.renterName).then( () => {
         this.getAllRenters()
@@ -72,14 +68,10 @@ export default {
    getAllRenters(){
             this.$billAPIService.getAllRenters().then(data => {
                 this.renters = data
-                console.log(data)
             })
+          }
         }
-    
-  
-  }
-  
-}
+      }
 </script>
 
 <style>
