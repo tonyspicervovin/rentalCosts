@@ -6,4 +6,4 @@ There are three tables in the database. Users, Bills and RenterPortions.
  the renterPortions table. That table has attributes billID, renterID, renter name, amount owed, the month, and whether it's paid or not. By selecting the paid checkbox it changes the paid value to true.
 
 
- ![homePage][homePage.jpg]
+ ![homePage][screenshots/homePage.jpg]
