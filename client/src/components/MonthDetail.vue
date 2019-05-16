@@ -85,8 +85,8 @@ export default {
             })  
         },
         billPaid(bill) {
-        this.$billAPIService.billPaid(bill.id).then( () => {
-        console.log(bill.id)
+        
+        this.$billAPIService.billPaid(bill).then( () => {
         this.getBills()
          })
         console.log('deleting')

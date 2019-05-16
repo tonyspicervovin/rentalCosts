@@ -23,8 +23,8 @@ export default {
             return response.data
         })
     },
-    billPaid(id){
-        return axios.put('/api/renterPortions/'+id, id).then(response => {
+    billPaid(bill){
+        return axios.patch('/api/renterPortions/'+bill.id, bill).then(response => {
             return response.data
         })
     },

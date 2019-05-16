@@ -3,7 +3,7 @@
     <td >{{ bill.renterName }}</td>
     <td> {{ bill.billName }} </td>
     <td> {{ bill.amount }} </td>
-    <td><input type="checkbox" v-on:change="checked(bill)">
+    <td><input type="checkbox" v-model="bill.paid" v-on:change="checked(bill)">
     </td>
   </tr>
 </template>

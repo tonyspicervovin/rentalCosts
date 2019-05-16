@@ -32,13 +32,21 @@ var router = express.Router()
             return res.json(bills)
         }).catch(err => next(err))
     })
-    router.put('/renterPortion', function(req, res, next){
-        const newid = req.params.id
-        sequelize.query("UPDATE renterPortions SET paid = 'true' WHERE id = ${newid}").then(([results,metadata])=> {
-
-        })
-        console.log(req.params.id)
-        
+    router.patch('/renterPortions/:id', function(req, res, next){
+       
+       renterPortions.update(req.body, {
+           where: {
+               id: req.params.id
+           }
+       }).then( (rowsModified) => {
+           if (!rowsModified[0]) {
+               return res.status(404).send('Not found')
+           }else {
+               return res.send('Ok')
+           }
+       }).catch( err => {
+        return next(err)
+       })
     })
     //deleting bills that match id passed
     router.post('/bills', function(req, res, next){
