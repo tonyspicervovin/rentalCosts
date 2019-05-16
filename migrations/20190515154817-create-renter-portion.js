@@ -21,10 +21,15 @@ module.exports = {
         type: Sequelize.INTEGER,
         foreignKey: true,
       },
-      
+      renterName: {
+        type: Sequelize.STRING
+      },
       billName: {
         allowNull: false,
         type: Sequelize.STRING
+      },
+      paid: {
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,

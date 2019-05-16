@@ -13,7 +13,7 @@
                         <ShowBills
                         v-for="bill in bills" v-bind:key="bill.id" 
                         v-bind:bill="bill"
-                        v-on:delete-bill="billDeleted">
+                        v-on:bill-paid="billPaid">
                         </ShowBills>
                     </table>
                 </div>
@@ -45,6 +45,7 @@ export default {
         },
     data(){
         return {
+            currentMonth:'',
             newBill: '',
             newAmount: '',
             bill: '',
@@ -57,6 +58,7 @@ export default {
     mounted(){
         this.getBills()
         this.month.name = this.$route.params.month
+        this.currentMonth=this.month.name
         },
     //loading bills initially
     //getting current month
@@ -73,20 +75,28 @@ export default {
                 }
             },
         getBills(){
+            
             console.log('happening')
-            this.$billAPIService.getAllBills().then(data => {
+            this.$billAPIService.getAllBills(this.month.name).then(data => {
                 this.bills = data
-                console.log(this.bills)
+                console.log('happened')
+
             })  
         },
-        billDeleted(bill) {
-        this.bills = this.bills.filter( function(s) { return s != bill })
-        this.$billAPIService.deleteBill(bill.id).then( () => {
+        billPaid(bill) {
+        this.$billAPIService.billPaid(bill.id).then( () => {
         this.getBills()
          })
         console.log('deleting')
         }
 },
+    //computed(){
+        //activeBills: function() {
+            //return this.bills.filter(function(u){
+               // return 
+           // })
+        //}
+   // }
 // methods to add and delete bill   
 }
 </script>

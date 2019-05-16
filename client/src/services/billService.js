@@ -23,13 +23,13 @@ export default {
             return response.data
         })
     },
-    deleteBill(id){
-        return axios.delete('/api/bills/'+id).then(response => {
+    billPaid(id){
+        return axios.put('/api/renterPortions/'+id, id).then(response => {
             return response.data
         })
     },
-    getAllBills(){
-        return axios.get('/api/bills').then(response => {
+    getAllBills(month){
+        return axios.get('/api/renterPortions/'+month).then(response => {
             return response.data
         })
     }

@@ -1,10 +1,9 @@
 <template>
     <tr orderBy name>    
-    <td>{{ 'harold' }}</td>
-    <td>{{ bill.name }}</td>
-    <td>{{ bill.amount }}</td>
-    <td>
-        <img class="delete-icon" v-on:click="deleteBill(bill)" src = "@/assets/money-bag.png">
+    <td >{{ bill.renterName }}</td>
+    <td> {{ bill.billName }} </td>
+    <td> {{ bill.amount }} </td>
+    <td><input type="checkbox" v-on:change="checked(bill)">
     </td>
   </tr>
 </template>
@@ -15,14 +14,12 @@ export default {
    
     props: {
         bill: Object,
+        
         },
     methods: {
-       
-        deleteBill(bill) {
-           if (confirm(`Do you want to make ${bill.name} as paid?`)){
-               this.$emit('delete-bill', bill)
-           }
-        }
+       checked(bill){
+           this.$emit('bill-paid', bill)   
+       }
     }
 }
 
