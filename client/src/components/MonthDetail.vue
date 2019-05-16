@@ -56,9 +56,10 @@ export default {
     // array of bills
             },
     mounted(){
-        this.getBills()
+        
         this.month.name = this.$route.params.month
         this.currentMonth=this.month.name
+         this.getBills()
         },
     //loading bills initially
     //getting current month
@@ -85,6 +86,7 @@ export default {
         },
         billPaid(bill) {
         this.$billAPIService.billPaid(bill.id).then( () => {
+        console.log(bill.id)
         this.getBills()
          })
         console.log('deleting')
