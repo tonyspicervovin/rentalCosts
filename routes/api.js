@@ -48,7 +48,7 @@ var router = express.Router()
         return next(err)
        })
     })
-    //deleting bills that match id passed
+    //patching a renter when they mark their portion as paid
     router.post('/bills', function(req, res, next){
         Bills.create(req.body).then( (bill) => {
 

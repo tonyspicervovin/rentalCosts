@@ -19,6 +19,7 @@
     v-bind:renter="renter"
     v-on:delete-renter="renterDeleted">
     </ShowRenters>
+    <!-- displaying renters -->
                     </table>
                 </div>
         </div>

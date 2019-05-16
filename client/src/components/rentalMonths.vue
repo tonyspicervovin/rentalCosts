@@ -14,7 +14,7 @@
 <script>
 import Month from '@/components/Month'
 export default {
-  name: 'rentalMonths',
+  name: 'RentalMonths',
   components: {
     Month
   },

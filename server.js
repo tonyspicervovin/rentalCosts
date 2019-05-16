@@ -1,11 +1,13 @@
 var express = require('express')
 var app = express()
 var bodyParser = require('body-parser')
-
+var path = require('path')
 var api_routes = require('./routes/api.js')
 
 app.use(bodyParser.json())
 
+
+app.use(express.static(path.join(__dirname,'client','dist')))
 app.use('/api', api_routes)
 app.use(function(req, res, next){
     res.status(404).send('Not found')
